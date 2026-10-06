@@ -24,7 +24,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📈 Stock Price Prediction Model")
+st.title("Stock Price Prediction Model")
 st.markdown("Visualizing historical stock training data alongside validation actuals and model predictions")
 
 # --- SIDEBAR CONFIGURATION ---
