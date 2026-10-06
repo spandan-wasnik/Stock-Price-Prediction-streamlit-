@@ -28,7 +28,7 @@ st.title("📈 Stock Price Prediction Model")
 st.markdown("Visualizing historical stock training data alongside validation actuals and model predictions")
 
 # --- SIDEBAR CONFIGURATION ---
-st.sidebar.header("⚙️ Configuration")
+st.sidebar.header("⚙️Configuration")
 ticker = st.sidebar.text_input("Stock Ticker", value="AAPL").upper().strip()
 start_date = st.sidebar.date_input("Start Date", value=pd.to_datetime("2012-01-01"))
 end_date = st.sidebar.date_input("End Date", value=pd.to_datetime("2026-01-01"))
