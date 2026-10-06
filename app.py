@@ -25,7 +25,7 @@ st.set_page_config(
 )
 
 st.title("📈 Stock Price Prediction Model")
-st.markdown("Visualizing historical stock training data alongside validation actuals and model predictions with zoom & pan capabilities.")
+st.markdown("Visualizing historical stock training data alongside validation actuals and model predictions")
 
 # --- SIDEBAR CONFIGURATION ---
 st.sidebar.header("⚙️ Configuration")
@@ -35,7 +35,7 @@ end_date = st.sidebar.date_input("End Date", value=pd.to_datetime("2026-01-01"))
 lookback_days = st.sidebar.slider("Lookback Window (Days)", min_value=10, max_value=120, value=60)
 model_choice = st.sidebar.selectbox("Model Architecture", ["random_forest", "xgboost", "linear"], index=0)
 
-run_button = st.sidebar.button("🚀 Train & Predict", type="primary", use_container_width=True)
+run_button = st.sidebar.button(" Train & Predict", type="primary", use_container_width=True)
 
 if run_button:
     with st.spinner(f"Fetching historical data for {ticker}..."):
@@ -75,12 +75,12 @@ if run_button:
     # 2. Zoomable & Classic Chart Visualizations
     st.subheader("Model Predictions vs Actuals")
     tab_interactive, tab_classic = st.tabs([
-        "🔍 Interactive Zoom & Pan (Plotly)",
-        "🖼️ Classic Notebook View (Matplotlib)"
+        "Interactive Zoom & Pan (Plotly)",
+        "Classic Notebook View (Matplotlib)"
     ])
     
     with tab_interactive:
-        st.caption("💡 **Zoom controls**: Click & drag on the chart to box-zoom, use the bottom slider / buttons (6m, 1y, 3y, All), scroll wheel to zoom, or double-click to reset view.")
+        st.caption(" **Zoom controls**: Click & drag on the chart to box-zoom, use the bottom slider / buttons (6m, 1y, 3y, All), scroll wheel to zoom, or double-click to reset view.")
         fig_interactive = plot_predictions_interactive(df, train_len, predictions, ticker=ticker)
         st.plotly_chart(fig_interactive, use_container_width=True)
 
@@ -117,4 +117,4 @@ if run_button:
             st.warning(f"Could not fetch live quote: {ex}")
 
 else:
-    st.info("👈 Set your parameters in the sidebar and click **'Train & Predict'** to generate the prediction graph.")
+    st.info("Set your parameters in the sidebar and click **'Train and Predict'** to generate the prediction graph.")
